@@ -1,0 +1,22 @@
+{
+  "name": "daily-dad-jokes",
+  "version": "1.0.0",
+  "description": "Twitter bot providing daily dad jokes",
+  "main": "server.js",
+  "repository": "https://github.com/gaillota/daily-dad-jokes",
+  "author": "Antoine Gaillot",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.0",
+    "bluebird": "^3.5.1",
+    "cron": "^1.3.0",
+    "cross-env": "^5.1.1",
+    "twit": "^2.2.9"
+  },
+  "devDependencies": {
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.12.1"
+  }
+}

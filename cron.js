@@ -1,7 +1,7 @@
 const { CronJob } = require('cron')
 
 const {tweetRandomJoke} = require('./services')
-const cronTime = process.env.CRON_TIME || '0 * * * *'
+const cronTime = process.env.CRON_TIME || '06 * * * *'
 
 const job = new CronJob({
     cronTime,

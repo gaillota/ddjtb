@@ -6,7 +6,7 @@ const methodOverride = require('method-override')
 const cors = require('cors')
 const helmet = require('helmet')
 
-const { logs, dailydadjokes } = require('./config/config')
+const { logs } = require('./config/config')
 const init = require('./api/init')
 
 /**
@@ -35,6 +35,6 @@ app.use(helmet())
 // enable CORS - Cross Origin Resource Sharing
 app.use(cors())
 
-init({ app, dailydadjokes })
+init({ app })
 
 module.exports = app

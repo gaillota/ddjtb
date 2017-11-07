@@ -6,14 +6,13 @@ const httpStatus = require('http-status')
  */
 // eslint-disable-next-line no-unused-vars
 module.exports = (req, res, next) => {
-    if (req.response) {
+    const {response} = req
+    if (response) {
         const {
-            response: {
-                status = httpStatus.OK,
-            },
-        } = req
+            status = httpStatus.OK,
+        } = response
 
-        return res.status(status).json(req.response)
+        return res.status(status).json(response)
     }
 
     return next()

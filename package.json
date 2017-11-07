@@ -6,6 +6,9 @@
   "repository": "https://github.com/gaillota/daily-dad-jokes",
   "author": "Antoine Gaillot",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon ./server.js"
+  },
   "dependencies": {
     "axios": "^0.17.0",
     "bluebird": "^3.5.1",

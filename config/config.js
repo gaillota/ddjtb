@@ -1,9 +1,9 @@
 module.exports = {
-    env: process.env.NODE_ENV,
+    env: process.env.NODE_ENV || 'development',
     logs: process.env.NODE_ENV === 'production' ? 'combined' : 'dev',
     port: process.env.PORT || 3000,
     dailydadjokes: {
-        url: 'https://icanhazdadjoke.com',
+        baseUrl: 'https://icanhazdadjoke.com',
     },
     path: 'database.json',
     twitter: {

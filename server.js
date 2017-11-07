@@ -9,8 +9,10 @@ app.listen(port, () => {
 })
 
 process.on('uncaughtException', function (err) {
-    console.log(err);
+    console.log('Shit happened:', err);
 });
+
+
 
 /**
  * Exports express

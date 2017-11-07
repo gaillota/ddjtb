@@ -16,7 +16,7 @@ const fetchRandomJoke = async () => {
 
 const formatTweet = (joke) => `${joke}
 
-#DDJ`
+#DailyDadJokes #FunnyDadJokes`
 
 module.exports = {
     fetchRandomJoke,

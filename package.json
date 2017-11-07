@@ -6,7 +6,7 @@
   "author": "Antoine Gaillot",
   "license": "MIT",
   "scripts": {
-    "start": "node ./cron.js",
+    "start": "node ./server.js",
     "dev": "nodemon ./server.js"
   },
   "engines": {

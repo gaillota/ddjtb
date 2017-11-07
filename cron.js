@@ -8,7 +8,7 @@ const job = new CronJob({
     onTick() {
         console.log('--- Tweeting random joke ---')
         tweetRandomJoke().then(() => {
-            console.log('--- Tweet successfull ---')
+            console.log('--- Tweet successfully tweeted ---')
         }).catch((e) => {
             console.error(`Error while trying to tweet new joke at ${new Date().toISOString()}`, e)
         })
@@ -17,6 +17,9 @@ const job = new CronJob({
     timeZone: 'Europe/Paris',
 })
 
-job.start()
-
-console.log(`${new Date().toString()}: Job is ${job.running ? 'running' : 'stopped'}`)
+module.exports = {
+    start() {
+        job.start()
+        console.log(`${new Date().toString()}: Job is ${job.running ? 'running' : 'stopped'}`)
+    }
+}

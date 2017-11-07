@@ -21,5 +21,5 @@ module.exports = {
     start() {
         job.start()
         console.log(`${new Date().toString()}: Job is ${job.running ? 'running' : 'stopped'}`)
-    }
+    },
 }

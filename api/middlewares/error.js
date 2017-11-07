@@ -3,7 +3,6 @@ const { env } = require('../../config/config')
 
 /**
  * Error handler. Send stacktrace only during development
- * @public
  */
 // eslint-disable-next-line no-unused-vars
 const errorHandler = (err, req, res, next) => {

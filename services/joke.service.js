@@ -9,16 +9,11 @@ const fetchRandomJoke = async () => {
             'Accept': 'application/json',
         },
     })
-    const {data} = response
+    const { data } = response
 
     return data
 }
 
-const formatTweet = (joke) => `${joke}
-
-#DailyDadJokes #FunnyDadJokes`
-
 module.exports = {
     fetchRandomJoke,
-    formatTweet
 }

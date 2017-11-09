@@ -1,12 +1,19 @@
 const express = require('express')
 
-const {tweetRandomJoke} = require('../services')
+const tweetRandomJoke = require('../workflows/tweet-random-joke')
 const responseHandler = require('./middlewares/response-handler')
+const logger = require('../utils/logger')
 
 const router = express.Router()
 
 router.post('/', async (req, res, next) => {
-    await tweetRandomJoke()
+    try {
+        await tweetRandomJoke()
+    } catch (e) {
+        logger.err(e)
+        next(e)
+        return
+    }
     req.response = {
         data: 'Success',
     }

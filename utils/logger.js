@@ -1,14 +1,12 @@
 const { Logger, transports } = require('winston')
 
-const { env } = require('../config/config')
-
 const logger = new Logger({
-    level: env === 'production' ? 'info' : 'debug',
+    level: 'info',
     transports: [
         new transports.Console({
             handleExceptions: true,
-            json: false,
-            colorize: true
+            json: true,
+            colorize: true,
         }),
     ],
     exitOnError: false,

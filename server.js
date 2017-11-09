@@ -13,8 +13,8 @@ console.log('--- Running jobs ---')
 job.start()
 
 process.on('uncaughtException', function (err) {
-    console.log('Shit happened:', err);
-});
+    console.log('Shit happened:', err)
+})
 
 
 /**

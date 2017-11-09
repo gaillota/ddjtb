@@ -1,6 +1,6 @@
 const { CronJob } = require('cron')
 
-const {tweetRandomJoke} = require('./services')
+const tweetRandomJoke = require('./workflows/tweet-random-joke')
 const cronTime = process.env.CRON_TIME || '0 */8 * * *'
 
 const job = new CronJob({
@@ -21,5 +21,5 @@ module.exports = {
     start() {
         job.start()
         console.log(`${new Date().toString()}: Job is ${job.running ? 'running' : 'stopped'}`)
-    }
+    },
 }

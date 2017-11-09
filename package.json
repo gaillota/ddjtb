@@ -25,7 +25,9 @@
     "http-status": "^1.0.1",
     "method-override": "^2.3.10",
     "morgan": "^1.9.0",
-    "twit": "^2.2.9"
+    "speakeasy-nlp": "^0.2.12",
+    "twit": "^2.2.9",
+    "winston": "^2.4.0"
   },
   "devDependencies": {
     "eslint": "^4.10.0",

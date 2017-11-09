@@ -6,7 +6,7 @@ const httpStatus = require('http-status')
  */
 module.exports = (req, res, next) => {
     const err = {
-        status: 404
+        status: httpStatus.NOT_FOUND
     }
 
     next(err)

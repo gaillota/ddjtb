@@ -1,8 +1,6 @@
 const router = require('./router')
 const notFound = require('./middlewares/not-found')
-const {
-    errorHandler,
-} = require('./middlewares/error')
+const errorHandler = require('./middlewares/error-handler')
 
 module.exports = ({ app }) => {
     app.use('/tweet', router)

@@ -7,6 +7,7 @@ const cors = require('cors')
 const helmet = require('helmet')
 
 const { logs } = require('./config/config')
+const logger = require('./utils/logger')
 const init = require('./api/init')
 
 /**
@@ -16,7 +17,7 @@ const init = require('./api/init')
 const app = express()
 
 // request logging. dev: console | production: file
-app.use(morgan(logs))
+app.use(morgan(logs, { stream: logger.stream }))
 
 // parse body params and attache them to req.body
 app.use(bodyParser.json())

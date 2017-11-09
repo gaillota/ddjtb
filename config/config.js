@@ -1,6 +1,6 @@
 const env = process.env.NODE_ENV || 'development'
 
-const vars = require('./vars.' + env + '.js')
+const vars = require('./vars.' + env)
 
 module.exports = {
     env,

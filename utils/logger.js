@@ -1,10 +1,11 @@
-const winston = require('winston')
+const { Logger, transports } = require('winston')
 
-const logger = winston.createLogger({
-    level: process.env.NODE_ENV === 'production' ? 'info' : 'debug',
+const { env } = require('../config/config')
+
+const logger = new Logger({
+    level: env === 'production' ? 'info' : 'debug',
     transports: [
-        new winston.transports.Console({
-            format: winston.format.simple(),
+        new transports.Console({
             handleExceptions: true,
             json: false,
             colorize: true

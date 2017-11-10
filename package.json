@@ -10,7 +10,7 @@
     "dev": "nodemon ./server.js"
   },
   "engines": {
-    "node": "7.10.1"
+    "node": "8.0"
   },
   "dependencies": {
     "axios": "^0.17.0",

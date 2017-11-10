@@ -17,7 +17,7 @@ const init = require('./api/init')
 const app = express()
 
 // request logging. dev: console | production: file
-app.use(morgan(logs, { stream: logger.stream }))
+app.use(morgan(logs))
 
 // parse body params and attache them to req.body
 app.use(bodyParser.json())

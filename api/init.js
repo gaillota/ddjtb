@@ -3,7 +3,7 @@ const notFound = require('./middlewares/not-found')
 const errorHandler = require('./middlewares/error-handler')
 
 module.exports = ({ app }) => {
-    app.use('/tweet', router)
+    app.use('/', router)
 
     // catch 404 and forward to error handler
     app.use(notFound)

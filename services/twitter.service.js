@@ -2,6 +2,10 @@ const Twit = require('twit')
 const nlp = require('speakeasy-nlp')
 
 module.exports = (params) => {
+    const twitter = new Twit({
+        ...params,
+        timeout_ms: 60 * 1000,
+    })
     const hashtags = [
         'DailyDadJoke',
         'Funny',
@@ -15,10 +19,6 @@ module.exports = (params) => {
         'Haha',
         'Hilarious',
     ]
-    const twitter = new Twit({
-        ...params,
-        timeout_ms: 60 * 1000,
-    })
 
     const _getHashtagsForJoke = (joke) => {
         const numberOfHashtags = 2

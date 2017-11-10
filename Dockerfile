@@ -9,9 +9,9 @@ RUN apt-get upgrade -y
 RUN yarn global add nodemon
 
 # Install app dependencies
-COPY package.json ./
+COPY package.json .
 
-RUN yarn install --production
+RUN yarn install --production=true
 
 # Bundle app source
 COPY . .

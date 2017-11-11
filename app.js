@@ -7,7 +7,6 @@ const cors = require('cors')
 const helmet = require('helmet')
 
 const { logs } = require('./config/config')
-const logger = require('./utils/logger')
 const init = require('./api/init')
 
 /**

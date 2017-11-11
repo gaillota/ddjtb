@@ -1,6 +1,4 @@
-FROM node:8
-
-ENV NODE_ENV production
+FROM node:9.1
 
 # Create app directory
 RUN mkdir -p /home/app

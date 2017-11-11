@@ -6,11 +6,11 @@
   "author": "Antoine Gaillot",
   "license": "MIT",
   "scripts": {
-    "start": "node ./server.js",
-    "dev": "nodemon ./server.js"
+    "start": "cross-env NODE_ENV=production node ./server.js",
+    "dev": "cross-env NODE_ENV=development nodemon ./server.js"
   },
   "engines": {
-    "node": "8.0"
+    "node": "9.1.0"
   },
   "dependencies": {
     "axios": "^0.17.0",

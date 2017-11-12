@@ -1,0 +1,20 @@
+version: "2"
+services:
+  web:
+    build: .
+    ports:
+      - "80:3000"
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ".:/usr/src/app"
+    restart: on-failure
+    links:
+      - mongo
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    volumes:
+      - /data/db
+    restart: unless-stopped

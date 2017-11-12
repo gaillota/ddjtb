@@ -1,12 +1,13 @@
 FROM node:9.1
 
+MAINTAINER Antoine Gaillot
+
 # Create app directory
-RUN mkdir -p /home/app
-WORKDIR /home/app
+WORKDIR /usr/src/app
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN yarn global add nodemon
+RUN yarn global add pm2
 
 # Install app dependencies
 COPY package.json .

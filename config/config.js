@@ -1,5 +1,6 @@
 const env = process.env.NODE_ENV || 'development'
 
+// eslint-disable-next-line prefer-template
 const vars = require('./vars.' + env)
 
 module.exports = {

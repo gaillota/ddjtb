@@ -6,7 +6,7 @@ module.exports = (params) => {
         ...params,
         timeout_ms: 60 * 1000,
     })
-    const hashtags = [
+    const hashtagsList = [
         'DailyDadJoke',
         'Funny',
         'DadJoke',
@@ -19,27 +19,29 @@ module.exports = (params) => {
         'Haha',
         'Hilarious',
     ]
-
+    
     const _getHashtagsForJoke = (joke) => {
-        const numberOfHashtags = 2
+        // eslint-disable-next-line no-bitwise
+        const hashtagsCount = Math.max(~~(Math.random() * hashtagsList.length), 3)
         const indexes = []
-
-        while (indexes.length < numberOfHashtags) {
-            const random = ~~(Math.random() * hashtags.length)
+        
+        while (indexes.length < hashtagsCount) {
+            // eslint-disable-next-line no-bitwise
+            const random = ~~(Math.random() * hashtagsList.length)
             if (!indexes.includes(random)) {
                 indexes.push(random)
             }
         }
-
-        return indexes.map(i => hashtags[i])
+        
+        return indexes.map(i => hashtagsList[i])
     }
+    
+    const tweet = text => twitter.post('statuses/update', { status: text })
+    
+    const formatTweet = joke => `${joke}
 
-    const tweet = (text) => twitter.post('statuses/update', { status: text })
-
-    const formatTweet = (joke) => `${joke}
-
-${_getHashtagsForJoke(joke).map(h => '#' + h).join(' ')}`
-
+${_getHashtagsForJoke(joke).map(h => `#${h}`).join(' ')}`
+    
     return {
         tweet,
         formatTweet,

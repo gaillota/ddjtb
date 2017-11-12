@@ -16,5 +16,5 @@ module.exports = {
         consumer_secret: process.env.CONSUMER_SECRET || vars.twitter_consumer_secret,
         access_token: process.env.ACCESS_TOKEN || vars.twitter_access_token,
         access_token_secret: process.env.ACCESS_TOKEN_SECRET || vars.twitter_access_token_secret,
-    }
+    },
 }

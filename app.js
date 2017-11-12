@@ -37,8 +37,4 @@ app.use(cors())
 
 init({ app })
 
-app.use('/', (req, res) => {
-    res.end('Worked !')
-})
-
 module.exports = app

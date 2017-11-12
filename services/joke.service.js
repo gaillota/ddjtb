@@ -6,11 +6,11 @@ const fetchRandomJoke = async () => {
     const url = `${config.dailydadjokes.baseUrl}/`
     const response = await axios.get(url, {
         headers: {
-            'Accept': 'application/json',
+            Accept: 'application/json',
         },
     })
     const { data } = response
-
+    
     return data
 }
 

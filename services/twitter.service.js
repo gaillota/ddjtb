@@ -1,5 +1,4 @@
 const Twit = require('twit')
-const nlp = require('speakeasy-nlp')
 
 module.exports = (params) => {
     const twitter = new Twit({

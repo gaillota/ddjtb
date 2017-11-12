@@ -7,13 +7,25 @@ const { port, env } = require('./config/config')
 const app = require('./app')
 const job = require('./jobs')
 
+/**
+ * Launch dat mofo
+ */
+console.log('---- Running jobs ----')
+job.start()
+
 app.listen(port, () => {
     console.info(`Server listening on port ${port} (${env})`)
 })
 
-console.log('---- Running jobs ----')
-job.start()
+/**
+ * Error handling
+ */
+process.on('unhandledRejection', (reason) => {
+    // Pass the error to the handler below
+    throw reason
+})
 
 process.on('uncaughtException', (err) => {
-    console.log('Shit happened:', err)
+    // eslint-disable-next-line quotes
+    console.log(`Shit's on fire, yo !`, err)
 })

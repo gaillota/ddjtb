@@ -25,6 +25,7 @@
     "http-status": "^1.0.1",
     "method-override": "^2.3.10",
     "morgan": "^1.9.0",
+    "pm2": "^2.7.2",
     "twit": "^2.2.9",
     "winston": "^2.4.0"
   },

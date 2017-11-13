@@ -1,21 +1,19 @@
 const tweetRandomJoke = require('../../workflows/tweet-random-joke')
-const logger = require('../../utils/logger')
 
 const tweet = async (req, res, next) => {
     try {
         await tweetRandomJoke()
     } catch (e) {
-        logger.err(e)
-        next(e)
-        return
+        return next(e)
     }
     req.response = {
         data: 'Success',
     }
     next()
+    // eslint-disable-next-line no-console
     console.log('Tweeting successful')
 }
 
 module.exports = {
-    tweet
+    tweet,
 }

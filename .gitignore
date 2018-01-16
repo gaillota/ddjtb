@@ -50,6 +50,6 @@ typings/
 # dotenv environment variables file
 .env
 
-.idea/workspace.xml
+.idea/
 .DS_Store
 build/

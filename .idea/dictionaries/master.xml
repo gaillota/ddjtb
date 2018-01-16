@@ -2,6 +2,11 @@
   <dictionary name="master">
     <words>
       <w>dailydadjokes</w>
+      <w>devtool</w>
+      <w>eslint</w>
+      <w>hashtag</w>
+      <w>hashtags</w>
+      <w>trendings</w>
     </words>
   </dictionary>
 </component>

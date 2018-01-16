@@ -6,11 +6,15 @@ const vars = require('./vars.' + env)
 module.exports = {
     env,
     logs: env === 'production' ? 'combined' : 'dev',
-    port: process.env.PORT || 3000,
+    port: process.env.PORT || vars.port || 3000,
+    mongodb: {
+        host: 'mongo',
+        port: 27017,
+        database: 'dailydadjokes',
+    },
     dailydadjokes: {
         baseUrl: 'https://icanhazdadjoke.com',
     },
-    path: 'database.json',
     twitter: {
         consumer_key: process.env.CONSUMER_KEY || vars.twitter_consumer_key,
         consumer_secret: process.env.CONSUMER_SECRET || vars.twitter_consumer_secret,

@@ -7,13 +7,19 @@ const { env } = require('../../config/config')
  */
 // eslint-disable-next-line no-unused-vars
 module.exports = (err, req, res, next) => {
+    const {
+        status = 500,
+        message = httpStatus[status],
+        error,
+        stack,
+    } = err
     const response = {
-        code: err.status,
-        message: err.message || httpStatus[err.status],
-        errors: err.errors,
-        stack: env === 'development' && err.stack,
+        code: status,
+        message,
+        error,
+        stack: env === 'development' && stack,
     }
-
-    res.status(err.status)
+    
+    res.status(status)
     res.json(response)
 }

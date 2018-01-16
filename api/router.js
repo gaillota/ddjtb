@@ -1,11 +1,13 @@
 const express = require('express')
 
+const hashtagsRouter = require('./hashtags/router')
+const tweetsRouter = require('./tweets/router')
 const responseHandler = require('./middlewares/response-handler')
-const tweetRouter = require('./tweets/router')
 
 const router = express.Router()
 
-router.use('/tweet', tweetRouter)
+router.use('/tweets', tweetsRouter)
+router.use('/hashtags', hashtagsRouter)
 router.use(responseHandler)
 
 module.exports = router

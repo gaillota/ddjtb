@@ -1,6 +1,8 @@
 const tweetRandomJoke = require('../../workflows/tweet-random-joke')
 
 const tweet = async (req, res, next) => {
+    const { joke } = req.body
+    
     try {
         await tweetRandomJoke()
     } catch (e) {

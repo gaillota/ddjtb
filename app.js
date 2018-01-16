@@ -3,16 +3,11 @@ const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const compress = require('compression')
 const methodOverride = require('method-override')
-const cors = require('cors')
 const helmet = require('helmet')
 
-const { logs } = require('./config/config')
-const init = require('./api/init')
+const { logs, mongodb } = require('./config/config')
+const setup = require('./setup')
 
-/**
- * Express instance
- * @public
- */
 const app = express()
 
 // request logging. dev: console | production: file
@@ -32,9 +27,6 @@ app.use(methodOverride())
 // secure apps by setting various HTTP headers
 app.use(helmet())
 
-// enable CORS - Cross Origin Resource Sharing
-app.use(cors())
-
-init({ app })
+setup({ app, mongodb })
 
 module.exports = app

@@ -1,0 +1,11 @@
+FROM node:9.1
+
+# Bruh
+MAINTAINER Antoine Gaillot
+
+# Create app directory
+WORKDIR /usr/src/app
+
+RUN yarn global add nodemon
+
+EXPOSE 3000

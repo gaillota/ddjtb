@@ -6,9 +6,9 @@
   "author": "Antoine Gaillot",
   "license": "MIT",
   "scripts": {
-    "start": "npm run dev",
-    "dev": "cross-env NODE_ENV=development nodemon server.js",
-    "serve": "cross-env NODE_ENV=production pm2 start server.js -f --no-daemon --name \"ddjtb\""
+    "start": "npm run serve:dev",
+    "serve:dev": "cross-env NODE_ENV=development nodemon server.js",
+    "serve:prod": "cross-env NODE_ENV=production nodemon server.js"
   },
   "engines": {
     "node": "^9"

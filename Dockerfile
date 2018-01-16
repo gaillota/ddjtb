@@ -19,4 +19,4 @@ COPY . .
 EXPOSE 8080
 
 # America ! Fuck yeah !
-CMD yarn run serve
+CMD ["yarn", "run", "serve:prod"]

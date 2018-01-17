@@ -1,12 +1,12 @@
-/* eslint-disable global-require,no-console */
+const router = require('./router')
 const notFound = require('./middlewares/not-found')
 const errorHandler = require('./middlewares/error-handler')
+const disabler = require('./middlewares/disabler.middleware')
 
 module.exports = ({ app }) => {
-    console.log('---- Initializing API ---')
+    app.use(disabler)
     
-    // Inline require to prevent mongoose access before connection
-    app.use('/api', require('./router'))
+    app.use('/', router)
 
     // catch 404 and forward to error handler
     app.use(notFound)

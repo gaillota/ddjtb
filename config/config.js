@@ -1,6 +1,6 @@
 const env = process.env.NODE_ENV || 'development'
 
-// eslint-disable-next-line prefer-template
+// eslint-disable-next-line prefer-template,import/no-dynamic-require
 const vars = require('./vars.' + env)
 
 module.exports = {
@@ -12,6 +12,7 @@ module.exports = {
         port: 27017,
         database: 'dailydadjokes',
     },
+    enableApi: process.env.ENABLE_API || false,
     dailydadjokes: {
         baseUrl: 'https://icanhazdadjoke.com',
     },

@@ -7,11 +7,11 @@ MAINTAINER Antoine Gaillot
 # Create app directory
 WORKDIR /usr/src/app
 
-RUN yarn global add pm2
+RUN npm install -g nodemon
 
 # Install app dependencies
 COPY package.json .
-RUN yarn install --production
+RUN npm install --production
 
 # Bundle app files (instead of volumes, thanks to CleverCloud)
 COPY . .
@@ -19,4 +19,4 @@ COPY . .
 EXPOSE 8080
 
 # America ! Fuck yeah !
-CMD ["yarn", "run", "serve:prod"]
+CMD ["npm", "run", "serve:prod"]

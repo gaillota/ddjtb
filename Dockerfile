@@ -6,7 +6,7 @@ MAINTAINER Antoine Gaillot
 # Create app directory
 WORKDIR /usr/src/app
 
-RUN yarn global add pm2
+RUN yarn global add nodemon
 
 # Install app dependencies
 COPY package.json .

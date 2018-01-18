@@ -12,7 +12,7 @@ WORKDIR $HOME_DIR
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN npm install -g nodemon
+RUN npm install -g nodemon cross-env
 
 # Install app dependencies
 COPY package*.json ./

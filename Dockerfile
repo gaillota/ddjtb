@@ -4,19 +4,21 @@ FROM node:9.1
 # Bruh
 MAINTAINER Antoine Gaillot
 
-# Create app directory
-WORKDIR /usr/src/app
+# Set homedir as env variable
+ENV HOME_DIR /usr/src/app
 
-RUN npm install -g nodemon
+# Create app directory
+WORKDIR $HOME_DIR
+
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN yarn global add nodemon
 
 # Install app dependencies
 COPY package.json .
-RUN npm install --production
+RUN yarn install --production
 
-# Bundle app files (instead of volumes, thanks to CleverCloud)
-COPY . .
-
-EXPOSE 8080
+EXPOSE 3000
 
 # America ! Fuck yeah !
-CMD ["npm", "run", "serve:prod"]
+CMD ["yarn", "run", "serve:prod"]

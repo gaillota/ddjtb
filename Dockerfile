@@ -12,11 +12,13 @@ WORKDIR $HOME_DIR
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN yarn global add nodemon
+RUN npm install -g nodemon
 
 # Install app dependencies
-COPY package.json .
-RUN yarn install --production
+COPY package*.json ./
+RUN npm install --only=production
+
+COPY . .
 
 EXPOSE 3000
 

@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run serve:dev",
-    "serve:dev": "cross-env NODE_ENV=development nodemon server.js",
-    "serve:prod": "cross-env NODE_ENV=production nodemon server.js"
+    "serve:dev": "NODE_ENV=development nodemon server.js",
+    "serve:prod": "NODE_ENV=production nodemon server.js"
   },
   "engines": {
     "node": "^9"

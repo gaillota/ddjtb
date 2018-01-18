@@ -5,7 +5,7 @@ FROM node:9.1
 MAINTAINER Antoine Gaillot
 
 # Set homedir as env variable
-ENV HOME_DIR /usr/src/app
+ENV HOME_DIR /app
 
 # Create app directory
 WORKDIR $HOME_DIR
@@ -15,12 +15,12 @@ RUN apt-get upgrade -y
 RUN npm install -g nodemon cross-env
 
 # Install app dependencies
-COPY package*.json ./
+COPY package*.json /app
 RUN npm install --only=production
 
-COPY . .
+COPY . /app
 
 EXPOSE 3000
 
 # America ! Fuck yeah !
-CMD ["yarn", "run", "serve:prod"]
+CMD ["npm", "run", "serve:prod"]

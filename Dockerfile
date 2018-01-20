@@ -12,7 +12,7 @@ WORKDIR $HOME_DIR
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN npm install -g nodemon cross-env
+RUN npm install -g nodemon
 
 # Install app dependencies
 COPY package*.json $HOME_DIR
@@ -20,5 +20,5 @@ RUN npm install --only=production
 
 EXPOSE 3000
 
-# America ! Fuck yeah !
-CMD ["npm", "run", "serve:prod"]
+# Default CMD on run (can be override with docker-compose run)
+CMD ["npm", "start"]

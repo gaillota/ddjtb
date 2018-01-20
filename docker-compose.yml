@@ -7,17 +7,17 @@ services:
     volumes:
       - /data/db
     restart: on-failure
+
   web:
     build:
-      context: .
+      context: ./
       dockerfile: Dockerfile
     ports:
       - 80:3000
     volumes:
-      - .:/app
+      - ".:/app"
     restart: on-failure
     environment:
-      - ENABLE_API=true
       - PORT=3000
     depends_on:
       - mongo

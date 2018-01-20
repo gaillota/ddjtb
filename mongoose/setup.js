@@ -2,11 +2,11 @@
 const connect = require('./connect')
 const register = require('./register')
 
-module.exports = async ({ mongodb }) => {
+module.exports = ({ mongodb }) => {
     console.log('---- Initializing Mongoose stuff ----')
     try {
-        await connect(mongodb)
-        await register()
+        connect(mongodb)
+        register()
     } catch (e) {
         console.error('Error while setting up mongoose:', e)
     }

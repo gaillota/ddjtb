@@ -1,12 +1,11 @@
 /* eslint-disable no-console */
 const path = require('path')
+const fs = require('fs')
 
-const { readDir } = require('../utils/filesystem')
-
-module.exports = async () => {
+module.exports = () => {
     console.log('---- Registering database models ----')
     const modelsDirectory = path.join(__dirname, './models')
-    const models = await readDir(modelsDirectory)
+    const models = fs.readdirSync(modelsDirectory)
     
     models
         .filter(file => file.match(/([a-zA-Z0-9-_]*)\.model\.js/))

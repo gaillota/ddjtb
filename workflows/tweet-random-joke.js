@@ -1,15 +1,15 @@
-const mongoose = require('mongoose')
+// const mongoose = require('mongoose')
 
 const JokeService = require('../services/joke.service')
 const TwitterService = require('../services/twitter.service')
+// const HashtagSchema = require('../mongoose/models/hashtag.model')
+
+// const Hashtag = mongoose.model(HashtagSchema.modelName)
 
 module.exports = async () => {
-    const Hashtag = mongoose.model('Hashtag')
     const { joke } = await JokeService.fetchRandomJoke()
-    const hashtags = await Hashtag.find({}).exec()
-    const tweet = TwitterService.formatTweet(joke, hashtags)
-    
-    console.log('tweet:', tweet)
+    // const hashtags = await Hashtag.find({}).exec()
+    const tweet = TwitterService.formatTweet(joke)
     
     await TwitterService.tweet(tweet)
 }

@@ -14,7 +14,7 @@ const HashtagSchema = new mongoose.Schema({
 }, {
     timestamps: true,
 })
+HashtagSchema.modelName = 'hashtags'
 
-const Hashtag = mongoose.model('Hashtag', HashtagSchema)
-
-module.exports = Hashtag
+module.exports = mongoose.model(HashtagSchema.modelName, HashtagSchema)
+module.exports.modelName = HashtagSchema.modelName

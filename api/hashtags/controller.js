@@ -1,8 +1,9 @@
 const mongoose = require('mongoose')
 
 const errorHandler = require('../utils/errors')
+const HashtagSchema = require('../../mongoose/models/hashtag.model')
 
-const Hashtag = mongoose.model('Hashtag')
+const Hashtag = mongoose.model(HashtagSchema.modelName)
 
 const create = async (req, res, next) => {
     const { text } = req.body

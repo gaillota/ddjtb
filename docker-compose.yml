@@ -14,7 +14,10 @@ services:
     ports:
       - 80:3000
     volumes:
-      - ".:/usr/src/app"
+      - .:/app
     restart: on-failure
+    environment:
+      - ENABLE_API=true
+      - PORT=3000
     depends_on:
       - mongo

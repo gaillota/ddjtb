@@ -1,5 +1,5 @@
 module.exports = {
-    port: 8080,
+    port: 3000,
     twitter_consumer_key: '7iVFcMBTCF1k4Sq69J33YamYf',
     twitter_consumer_secret: 'KCDAgZs36xfC9uF1a5VnDkJ1td0SLrlWHGdWFjbRGhN1MCWa7d',
     twitter_access_token: '925855345804824576-TmL3vaB9vPVT3KeVoSP9nLnIeIZGnqE',

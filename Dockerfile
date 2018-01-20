@@ -12,13 +12,11 @@ WORKDIR $HOME_DIR
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN npm install -g nodemon cross-env
+RUN npm install -g nodemon
 
 # Install app dependencies
-COPY package*.json /app
+COPY package*.json $HOME_DIR
 RUN npm install --only=production
-
-COPY . /app
 
 EXPOSE 3000
 

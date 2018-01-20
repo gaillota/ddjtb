@@ -1,5 +1,5 @@
 /* eslint-disable global-require */
-module.exports = async ({ app, mongodb }) => {
-    await require('./mongoose/setup')({ mongodb })
-    await require('./api/setup')({ app })
+module.exports = ({ app, mongodb }) => {
+    require('./mongoose/setup')({ mongodb })
+    require('./api/setup')({ app })
 }

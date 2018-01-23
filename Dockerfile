@@ -12,13 +12,13 @@ WORKDIR $HOME_DIR
 
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN yarn global add nodemon
+RUN npm install -g nodemon
 
 # Install app dependencies
 COPY package.json $HOME_DIR
-RUN yarn install --production
+RUN npm install --production
 
 EXPOSE 3000
 
 # Default CMD on run (can be override with docker-compose run)
-CMD ["yarn", "start"]
+CMD ["npm", "start"]

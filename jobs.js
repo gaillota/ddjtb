@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
 const { CronJob } = require('cron')
 
+const { cronInterval: cronTime } = require('./config/config')
 const tweetRandomJoke = require('./workflows/tweet-random-joke')
-
-const cronTime = process.env.CRON_TIME_TWEET || '0 */8 * * *'
 
 const job = new CronJob({
     cronTime,

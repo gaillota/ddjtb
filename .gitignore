@@ -49,6 +49,9 @@ typings/
 
 # dotenv environment variables file
 .env
+.env.development
+.env.test
+.env.production
 
 .idea/
 .DS_Store

@@ -15,7 +15,7 @@ RUN apt-get upgrade -y
 RUN yarn global add nodemon
 
 # Install app dependencies
-COPY package*.json $HOME_DIR
+COPY package.json $HOME_DIR
 RUN yarn install --production
 
 EXPOSE 3000

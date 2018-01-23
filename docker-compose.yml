@@ -17,7 +17,5 @@ services:
     volumes:
       - ".:/app"
     restart: on-failure
-    environment:
-      - PORT=3000
     depends_on:
       - mongo

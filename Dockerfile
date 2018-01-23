@@ -5,7 +5,7 @@ FROM node:9.1
 MAINTAINER Antoine Gaillot
 
 # Set homedir as env variable
-ENV HOME_DIR /app/
+ENV HOME_DIR /app
 
 # Create app directory
 WORKDIR $HOME_DIR
@@ -13,10 +13,6 @@ WORKDIR $HOME_DIR
 RUN apt-get update
 RUN apt-get upgrade -y
 RUN npm install -g nodemon
-
-# Install app dependencies
-COPY package.json $HOME_DIR
-RUN npm install --production
 
 EXPOSE 3000
 

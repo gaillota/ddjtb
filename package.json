@@ -8,7 +8,7 @@
   "scripts": {
     "start": "npm run serve:prod",
     "serve:dev": "nodemon server.js --watch .",
-    "serve:prod": "nodemon server.js"
+    "serve:prod": "npm install --production && nodemon server.js"
   },
   "engines": {
     "node": "^9"

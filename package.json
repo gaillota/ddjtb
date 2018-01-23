@@ -7,8 +7,8 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run serve:prod",
-    "serve:dev": "nodemon server.js --watch .",
-    "serve:prod": "npm install --production && nodemon server.js"
+    "serve:dev": "NODE_ENV=development nodemon server.js --watch .",
+    "serve:prod": "npm install --production && NODE_ENV=production nodemon server.js"
   },
   "engines": {
     "node": "^9"

@@ -1,4 +1,6 @@
-# Daily dad jokes - Twitter bot
+# [WIP] Daily dad jokes - Twitter bot
+
+A Twitter bot, tweeting what it's asked to tweet on a tweeting basis
 
 ## Workflows
 
